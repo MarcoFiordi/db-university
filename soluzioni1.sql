@@ -41,3 +41,16 @@ SELECT COUNT(*)
 FROM `teachers`
 WHERE `teachers`.`phone`IS NULL;
 
+/*QUERY CON JOIN*/
+/*Selezionare tutti gli studenti iscritti al corso di laurea in economia*/
+SELECT `students`.*
+FROM `students`
+	JOIN `degrees`
+    ON `students`.`degree_id` = `degrees`.`id`
+WHERE `degrees`.`name` = 'corso di laurea in Economia';
+
+
+
+
+
+
