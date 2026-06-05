@@ -1,4 +1,4 @@
-/*Selezionare gli studenti nati nel 1990 (190)*/
+/*Selezionare gli studenti nati nel 1990 (160)*/
 SELECT *
 FROM `students`
 WHERE `students`.`date_of_birth` LIKE '1990%';
@@ -32,7 +32,7 @@ SELECT `degrees`.*
 FROM `degrees`
 WHERE `degrees`.`level` = 'magistrale';
 
-/*Selezionare tutti i corsi di laurea magistrale*/
+/*Da quanti dipartimenti è composta l'università? (12)*/
 SELECT COUNT(*)
 FROM `departments`;
 
