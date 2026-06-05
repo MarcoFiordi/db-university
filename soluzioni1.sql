@@ -66,6 +66,30 @@ FROM `courses`
         ON `course_teacher`.`teacher_id` = `teachers`.`id`
 WHERE `teachers`.`id` = 44;
 
+/*Seleziona tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo 
+dipartimento, in ordine alfabetico per cognome e nome*/
+SELECT `students`.*, `degrees`.*, `departments`.*  
+FROM `students`
+	JOIN `degrees`
+    ON `students`.`degree_id` = `degrees`.`id`
+		JOIN `departments`
+        ON `degrees`.`department_id` = `departments`.`id`
+        ORDER BY `students`.`surname`, `students`.`name`;
+        
+/*Selezionare tutti i corsi di laurea con i realtivi corsi e isegnanti*/
+SELECT `degrees`.`name`, `courses`.`name`, `teachers`.`name`, `teachers`.`surname` 
+FROM `degrees`
+	JOIN `courses`
+    ON `courses`.`degree_id` = `degrees`.`id`
+		JOIN `course_teacher`
+		ON `course_teacher`.`course_id` = `courses`.`id`
+			JOIN `teachers`
+            ON `course_teacher`.`teacher_id` = `teachers`.`id`
+    
+        
+
+
+
 
 
 
